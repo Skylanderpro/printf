@@ -23,11 +23,11 @@ int _printf(const char *format, ...)
 			}
 			else if (format[v] == 'd')
 			{
-				print_d;
+				print_d(va_args(vargs, int));
 			}
 			else if (format[v] == 'i')
 			{
-				print_i;
+				print_d(va_args(vargs, int));
 			}
 			else if (format[v] == 'c')
 			{

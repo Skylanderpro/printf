@@ -8,5 +8,6 @@
 
 int put_s(char *s, int count);
 int _printf(const char *format, ...);
+int print_d(int dec, int count);
 
 #endif
