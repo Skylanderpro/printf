@@ -33,9 +33,6 @@ int _printf(const char *format, ...)
 				count++;
 			}
 			else
-			{
-				continue;
-			}
 		}
 		else
 		{
