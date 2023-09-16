@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 {
 	va_list vargs;
 	int v, y, count = 0;
-	char *s, p;
+	char p;
 
 	y = strlen(format);
 	va_start(vargs, format);
@@ -19,24 +19,22 @@ int _printf(const char *format, ...)
 			v++;
 			if (format[v] == 's')
 			{
-				s = va_arg(vargs, char*);
-				while (*s)
-				{
-					putchar(*s);
-					s++;
-					count++;
-				}
+				put_s(va_arg(vargs, char*), count);
 			}
-			if (format[v] == 'c')
+			else if (format[v] == 'c')
 			{
 				p = (char) va_arg(vargs, int);
 				putchar(p);
 				count++;
 			}
-			if (format[v] == '%')
+			else if (format[v] == '%')
 			{
 				putchar('%');
 				count++;
+			}
+			else
+			{
+				continue;
 			}
 		}
 		else

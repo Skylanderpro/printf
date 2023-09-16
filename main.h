@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <stdarg.h>
-
+int *put_s(char *s, int count);
 int _printf(const char *format, ...);
 
 #endif
