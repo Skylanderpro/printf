@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			}
 			if (format[v] == 'c')
 			{
-				p = va_arg(vargs, int);
+				p = (char) va_arg(vargs, int);
 				putchar(p);
 				count++;
 			}
