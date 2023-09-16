@@ -21,6 +21,14 @@ int _printf(const char *format, ...)
 			{
 				put_s(va_arg(vargs, char*), count);
 			}
+			else if (format[v] == 'd')
+			{
+				print_d;
+			}
+			else if (format[v] == 'i')
+			{
+				print_i;
+			}
 			else if (format[v] == 'c')
 			{
 				p = (char) va_arg(vargs, int);
