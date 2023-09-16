@@ -44,5 +44,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(vargs);
-	return (count);
+	return (count - 1);
 }
