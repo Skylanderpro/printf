@@ -6,7 +6,7 @@
  *
  *Return: 0
  */
-int *put_s(char *s, int count)
+int put_s(char *s, int count)
 {
 	while (*s)
 	{
@@ -14,5 +14,5 @@ int *put_s(char *s, int count)
 		s++;
 		count++;
 	}
-	return (0);
+	return (count);
 }
