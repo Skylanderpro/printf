@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git pull
+
 # Run 'git add .' to stage all changes
 git add .
 
