@@ -41,12 +41,12 @@ void print_s(const char *str, char *buffer, int *count, int *buffer_index)
 	{
 		str = "(null)";
 	}
-	len = strlen(str);
+	len = _strlen(str);
 	if (*buffer_index + len >= BUFFER_SIZE - 1)
 	{
 		print_buffer(buffer, count, buffer_index);
 	}
-	strncpy(buffer + *buffer_index, str, len);
+	_strncpy(buffer + *buffer_index, str, len);
 	*buffer_index += len;
 }
 /**
@@ -62,12 +62,12 @@ void print_di(int num, char *buffer, int *count, int *buffer_index)
 	char num_str[20];
 
 	snprintf(num_str, sizeof(num_str), "%d", num);
-	len = strlen(num_str);
+	len = _strlen(num_str);
 	if (*buffer_index + len >= BUFFER_SIZE - 1)
 	{
 		print_buffer(buffer, count, buffer_index);
 	}
-	strncpy(buffer + *buffer_index, num_str, len);
+	_strncpy(buffer + *buffer_index, num_str, len);
 	*buffer_index += len;
 }
 /**
