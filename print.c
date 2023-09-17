@@ -18,7 +18,7 @@ void print_buffer(char *buffer, int *count, int *buffer_index)
  *@count: nu of printed chars
  *buffer_index: pointer to an int
  */
-void print_c(char c, char *buffer, int *count, int *buffer_index)
+void print_c(char c, char *buffer, int *count, int buffer_index)
 {
 	if (buffer_index >= BUFFER_SIZE - 1)
 	{
