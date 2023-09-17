@@ -53,10 +53,10 @@ int print_integer(int n)
  *
  *Return: number of printed characters
  */
-int put_perc(int count)
+int put_perc(void)
 {
 	putchar('%');
-	return (count);
+	return (1);
 }
 
 /**
@@ -95,7 +95,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*ptr == '%')
 			{
-				put_perc(count);
+				count += put_perc();
 			}
 		}
 		else
