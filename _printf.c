@@ -45,7 +45,6 @@ int print_integer(int n)
 {
 	int count = 0;
 
-	printf("%d", n);
 	count++;
 
 	return (count);
