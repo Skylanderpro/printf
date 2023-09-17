@@ -71,6 +71,9 @@ int _printf(const char *format, ...)
 	const char *ptr;
 	int count = 0;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(vargs, format);
 
 	for (ptr = format; *ptr != '\0'; ptr++)
