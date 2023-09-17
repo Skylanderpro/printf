@@ -6,8 +6,11 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <limits.h>
 
-int putcher(char c);
 int _printf(const char *format, ...);
+void print_buffer(char *buffer, int *count, int buffer_index);
+void print_c(char c);
+void print_s(const char *str);
 
 #endif
