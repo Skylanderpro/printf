@@ -1,41 +1,68 @@
 #include "main.h"
+
 /**
- * _printf - Function to produce output according to a format
- * @format: constant char
- * Return: No of characters printed
+ * print_char - Print a single character and return the character count.
+ * @c: Character to be printed.
+ *
+ * Return: Number of characters printed (always 1 for a single character).
+ */
+int print_char(char c)
+{
+	putchar(c);
+	return (1);
+}
+
+/**
+ * print_string - Print a string and return the character count.
+ * @str: String to be printed.
+ *
+ * Return: Number of characters printed.
+ */
+int print_string(const char *str)
+{
+	int count = 0;
+
+	while (*str)
+	{
+		putchar(*str);
+		str++;
+		count++;
+	}
+	return (count);
+}
+
+/**
+ * _printf - Custom printf function to handle %c, %s, and %% specifiers.
+ * @format: Format string containing specifiers.
+ *
+ * Return: Total number of characters printed.
  */
 int _printf(const char *format, ...)
 {
-	va_list vargs;
-	int v, y, count = 0;
-	char p;
+	va_list args;
+	const char *ptr;
+	int count = 0;
 
-	y = strlen(format);
-	va_start(vargs, format);
-	for (v = 0; v < y; v++)
+	va_start(args, format);
+
+	for (ptr = format; *ptr != '\0'; ptr++)
 	{
-		if (format[v] == '%')
+		if (*ptr == '%')
 		{
-			v++;
-			if (format[v] == 's')
+			ptr++;
+			if (*ptr == 'c')
 			{
-				put_s(va_arg(vargs, char*), count);
+				char c = (char)va_arg(args, int);
+
+				count += print_char(c);
 			}
-			else if (format[v] == 'd')
+			else if (*ptr == 's')
 			{
-				print_d;
+				char *s = va_arg(args, char *);
+
+				count += print_string(s);
 			}
-			else if (format[v] == 'i')
-			{
-				print_i;
-			}
-			else if (format[v] == 'c')
-			{
-				p = (char) va_arg(vargs, int);
-				putchar(p);
-				count++;
-			}
-			else if (format[v] == '%')
+			else if (*ptr == '%')
 			{
 				putchar('%');
 				count++;
@@ -43,10 +70,13 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			putchar(format[v]);
+			putchar(*ptr);
 			count++;
 		}
 	}
-	va_end(vargs);
+
+	va_end(args);
+
 	return (count);
 }
+
