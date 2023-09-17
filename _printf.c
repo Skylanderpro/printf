@@ -24,6 +24,10 @@ int print_string(const char *str)
 
 	while (*str)
 	{
+		if (str == NULL)
+		{
+			str = "";
+		}
 		putchar(*str);
 		str++;
 		count++;
