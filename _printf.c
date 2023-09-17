@@ -32,18 +32,46 @@ int print_string(const char *str)
 }
 
 /**
- * _printf - Custom printf function to handle %c, %s, and %% specifiers.
+ * print_integer - Print an integer and return the character count.
+ * @n: Integer to be printed.
+ *
+ * Return: Number of characters printed.
+ */
+int print_integer(int n)
+{
+	int count = 0;
+
+	printf("%d", n);
+	count++;
+
+	return (count);
+}
+
+/**
+ *put_perc - prints percent
+ *@count: characters printed
+ *
+ *Return: number of printed characters
+ */
+int put_perc(int count)
+{
+	putchar('%');
+	return (count);
+}
+
+/**
+ * _printf - Custom printf function, handle %c,%s,%d,%i,and %% specifiers.
  * @format: Format string containing specifiers.
  *
  * Return: Total number of characters printed.
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
+	va_list vargs;
 	const char *ptr;
 	int count = 0;
 
-	va_start(args, format);
+	va_start(vargs, format);
 
 	for (ptr = format; *ptr != '\0'; ptr++)
 	{
@@ -52,20 +80,19 @@ int _printf(const char *format, ...)
 			ptr++;
 			if (*ptr == 'c')
 			{
-				char c = (char)va_arg(args, int);
-
-				count += print_char(c);
+				count += print_char((char)va_arg(vargs, int));
 			}
 			else if (*ptr == 's')
 			{
-				char *s = va_arg(args, char *);
-
-				count += print_string(s);
+				count += print_string(va_arg(vargs, char *));
+			}
+			else if (*ptr == 'd' || *ptr == 'i')
+			{
+				count += print_integer(va_arg(vargs, int));
 			}
 			else if (*ptr == '%')
 			{
-				putchar('%');
-				count++;
+				put_perc(count);
 			}
 		}
 		else
@@ -75,8 +102,7 @@ int _printf(const char *format, ...)
 		}
 	}
 
-	va_end(args);
+	va_end(vargs);
 
-	return (count);
+	return (count + 1);
 }
-
