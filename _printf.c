@@ -23,13 +23,16 @@ int _printf(const char *format, ...)
 		{
 			ptr++;
 			if (*ptr == 'c')
-				print_c((char)va_arg(vargs, int));
+				print_c((char)va_arg(vargs, int), buffer, &count,
+						&buffer_index);
 			else if (*ptr == 's')
-				print_s(va_arg(vargs, char *));
+				print_s(va_arg(vargs, char *), buffer, &count,
+						&buffer_index);
 			else if (*ptr == 'd' || *ptr == 'i')
-				print_di(va_arg(vargs, int));
+				print_di(va_arg(vargs, int), buffer, &count,
+						&buffer_index);
 			else if (*ptr == '%')
-				print_perc();
+				print_perc(buffer, &count, &buffer_index);
 		}
 		else
 		{

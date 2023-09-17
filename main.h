@@ -10,10 +10,10 @@
 #include <limits.h>
 
 int _printf(const char *format, ...);
-void print_buffer(char *buffer, int *count, int buffer_index);
-void print_c(char c);
-void print_s(const char *str);
-void print_di(int num);
-void print_perc(void);
+void print_buffer(char *buffer, int *count, int *buffer_index);
+void print_c(char c, char *buffer, int *count, int *buffer_index);
+void print_s(const char *str, char *buffer, int *count, int *buffer_index);
+void print_di(int num, char *buffer, int *count, int *buffer_index);
+void print_perc(char *buffer, int *count, int *buffer_index);
 
 #endif
