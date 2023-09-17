@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	const char *ptr;
 	int count = 0, buffer_index = 0;
 	char buffer[BUFFER_SIZE];
+	unsigned int num;
 
 	if (format == NULL)
 		return (-1);
@@ -33,6 +34,11 @@ int _printf(const char *format, ...)
 						&buffer_index);
 			else if (*ptr == '%')
 				print_perc(buffer, &count, &buffer_index);
+			else if (*ptr == 'b')
+			{
+				num = va_arg(vargs, unsigned int);
+				print_binary(num, buffer, &count, &buffer_index);
+			}
 		}
 		else
 		{
