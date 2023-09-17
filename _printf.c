@@ -46,5 +46,5 @@ int _printf(const char *format, ...)
 		print_buffer(buffer, &count, &buffer_index);
 
 	va_end(vargs);
-	return count;
+	return (count);
 }

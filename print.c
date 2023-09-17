@@ -16,7 +16,7 @@ void print_buffer(char *buffer, int *count, int *buffer_index)
  *@c: the char to add
  *@buffer: buffer: stores a string to print
  *@count: nu of printed chars
- *buffer_index: pointer to an int
+ *@buffer_index: pointer to an int
  */
 void print_c(char c, char *buffer, int *count, int *buffer_index)
 {
@@ -31,7 +31,7 @@ void print_c(char c, char *buffer, int *count, int *buffer_index)
  *@str: the string to add
  *@buffer: stores a string to print
  *@count: no of printed chars
- *buffer_index: pointer to an int
+ *@buffer_index: pointer to an int
  */
 void print_s(const char *str, char *buffer, int *count, int *buffer_index)
 {
@@ -54,12 +54,13 @@ void print_s(const char *str, char *buffer, int *count, int *buffer_index)
  *@num: the integer to addi
  *@buffer: stores a string to print
  *@count: no of printed chars
- *buffer_index: pointer to an int
+ *@buffer_index: pointer to an int
  */
 void print_di(int num, char *buffer, int *count, int *buffer_index)
 {
 	int len;
 	char num_str[20];
+
 	snprintf(num_str, sizeof(num_str), "%d", num);
 	len = strlen(num_str);
 	if (*buffer_index + len >= BUFFER_SIZE - 1)
@@ -73,7 +74,7 @@ void print_di(int num, char *buffer, int *count, int *buffer_index)
  *print_perc - adds percent to buffer
  *@buffer: stores a string to print
  *@count: no of printed chars
- *buffer_index: pointer to an int
+ *@buffer_index: pointer to an int
  */
 void print_perc(char *buffer, int *count, int *buffer_index)
 {
