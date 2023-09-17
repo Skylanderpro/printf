@@ -24,7 +24,7 @@ void print_c(char c, char *buffer, int *count, int *buffer_index)
 	{
 		print_buffer(buffer, count, buffer_index);
 	}
-	buffer[*buffer_index++] = c;
+	buffer[(*buffer_index)++] = c;
 }
 /**
  *print_s - adds a string to buffer
@@ -80,5 +80,5 @@ void print_perc(char *buffer, int *count, int *buffer_index)
 {
 	if (*buffer_index >= BUFFER_SIZE - 1)
 		print_buffer(buffer, count, buffer_index);
-	buffer[*buffer_index++] = '%';
+	buffer[(*buffer_index)++] = '%';
 }
