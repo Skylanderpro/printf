@@ -43,37 +43,10 @@ int print_string(const char *str)
  */
 int print_integer(int n)
 {
-	int count = 0, digit, i, num = n, divisor, temp, num_digits = 1;
+	int count = 0;
 
-	if (n < 0)
-	{
-		putchar('-');
-		num = -num;
-		count++;
-	}
-
-
-	temp = num;
-	while (temp > 9)
-	{
-		temp /= 10;
-		num_digits++;
-	}
-
-	divisor = 1;
-
-	for (i = 1; i < num_digits; i++)
-		divisor *= 10;
-
+	printf("%d", n);
 	count++;
-	while (divisor > 0)
-	{
-		digit = num / divisor;
-		putchar('0' + digit);
-		count++;
-		num -= digit * divisor;
-		divisor /= 10;
-	}
 
 	return (count);
 }
