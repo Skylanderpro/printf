@@ -24,7 +24,7 @@ int print_string(const char *str)
 
 	while (*str)
 	{
-		if (str == NULL)
+		if (str == NULL || *str == '\0')
 		{
 			str = "";
 		}
