@@ -49,8 +49,6 @@ int print_integer(int n)
 
 /**
  *put_perc - prints percent
- *@count: characters printed
- *
  *Return: number of printed characters
  */
 int put_perc(void)
