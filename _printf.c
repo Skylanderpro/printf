@@ -134,5 +134,6 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(vargs);
+	putchar('\n');
 	return (count);
 }
