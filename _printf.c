@@ -8,7 +8,7 @@
  */
 int print_char(char c)
 {
-	putchar(c);
+	putcher(c);
 	return (1);
 }
 
@@ -28,7 +28,7 @@ int print_string(const char *str)
 		{
 			str = "";
 		}
-		putchar(*str);
+		putcher(*str);
 		str++;
 		count++;
 	}
@@ -47,7 +47,7 @@ int print_integer(int n)
 
 	if (n < 0)
 	{
-		putchar('-');
+		putcher('-');
 		num = -num;
 		count++;
 	}
@@ -69,7 +69,7 @@ int print_integer(int n)
 	while (divisor > 0)
 	{
 		digit = num / divisor;
-		putchar('0' + digit);
+		putcher('0' + digit);
 		count++;
 		num -= digit * divisor;
 		divisor /= 10;
@@ -84,7 +84,7 @@ int print_integer(int n)
  */
 int put_perc(void)
 {
-	putchar('%');
+	putcher('%');
 	return (1);
 }
 
@@ -129,7 +129,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			putchar(*ptr);
+			putcher(*ptr);
 			count++;
 		}
 	}

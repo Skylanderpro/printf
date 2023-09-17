@@ -5,7 +5,9 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
 
+int putcher(char c);
 int _printf(const char *format, ...);
 
 #endif
