@@ -16,5 +16,9 @@ void print_s(const char *str, char *buffer, int *count, int *buffer_index);
 void print_di(int num, char *buffer, int *count, int *buffer_index);
 void print_perc(char *buffer, int *count, int *buffer_index);
 void print_binary(unsigned int num, char *buffer, int *count, int *buffer_index);
+void print_unsigned(va_list args, char *buffer, int *count, int *buffer_index);
+void print_octal(va_list args, char *buffer, int *count, int *buffer_index);
+void print_hexad_lower(va_list args, char *buffer, int *count, int *buffer_index);
+void print_hexad_upper(va_list args, char *buffer, int *count, int *buffer_index);
 
 #endif

@@ -39,7 +39,14 @@ int _printf(const char *format, ...)
 				num = va_arg(vargs, unsigned int);
 				print_binary(num, buffer, &count, &buffer_index);
 			}
-		}
+			else if (*ptr == 'u')
+				print_unsigned(num, buffer, &count, &buffer_index);
+			else if (*ptr == 'o')
+				print_octal(num, buffer, &count, &buffer_index)
+			else if (*ptr == 'x')
+				print_hexad_lower(num, buffer, &count, &buffer_index);
+			else if (*ptr == 'X')
+				print_hexad_upper(num, buffer, &count, &buffer_index);
 		else
 		{
 			if (buffer_index >= BUFFER_SIZE - 1)
