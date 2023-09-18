@@ -15,9 +15,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(vargs, format);
-
 	for (ptr = format; *ptr != '\0'; ptr++)
 	{
 		if (*ptr == '%')
@@ -42,22 +40,21 @@ int _printf(const char *format, ...)
 			else if (*ptr == 'u')
 				print_unsigned(num, buffer, &count, &buffer_index);
 			else if (*ptr == 'o')
-				print_octal(num, buffer, &count, &buffer_index)
+				print_octal(num, buffer, &count, &buffer_index);
 			else if (*ptr == 'x')
 				print_hexad_lower(num, buffer, &count, &buffer_index);
 			else if (*ptr == 'X')
 				print_hexad_upper(num, buffer, &count, &buffer_index);
-		else
-		{
-			if (buffer_index >= BUFFER_SIZE - 1)
-				print_buffer(buffer, &count, &buffer_index);
-			buffer[buffer_index++] = *ptr;
+			else
+			{
+				if (buffer_index >= BUFFER_SIZE - 1)
+					print_buffer(buffer, &count, &buffer_index);
+				buffer[buffer_index++] = *ptr;
+			}
 		}
 	}
-
 	if (buffer_index > 0)
 		print_buffer(buffer, &count, &buffer_index);
-
 	va_end(vargs);
 	return (count);
 }
