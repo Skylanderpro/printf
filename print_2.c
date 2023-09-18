@@ -57,7 +57,7 @@ void print_binary(unsigned int num, char *buffer, int *count,
  *@buffer_index: chars in buffer
  */
 
-void print_unsigned(unsigned int num, char *buffer, int *count,
+void print_unsigned_int(unsigned int num, char *buffer, int *count,
 		int *buffer_index)
 {
 	char num_str[20];
