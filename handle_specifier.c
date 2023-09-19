@@ -3,7 +3,11 @@
 /**
  * handle_format - handle format specifiers
  * @ptr: string argument to printf
- *Return: count
+ * @vargs: va_list of arguments
+ * @buffer: Buffer to store output
+ * @count: Pointer to the count of printed characters
+ * @buffer_index: Pointer to the current index in the buffer
+ * @num: Unsigned int for format specifiers that require it
  */
 void handle_format(const char *ptr, va_list vargs, char *buffer, int *count,
 		int *buffer_index, unsigned int *num)
@@ -33,7 +37,7 @@ void handle_format(const char *ptr, va_list vargs, char *buffer, int *count,
 	else if (*ptr == 'o')
 		print_octal(*num, buffer, count, buffer_index);
 	else if (*ptr == 'x')
-		print_hexad_lower(num, buffer, &count, &buffer_index);
+		print_hexad_lower(num, buffer, count, buffer_index);
 	else if (*ptr == 'X')
 		print_hexad_upper(*num, buffer, count, buffer_index);
 	else
