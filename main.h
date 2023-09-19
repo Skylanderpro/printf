@@ -20,5 +20,6 @@ void print_unsigned_int(unsigned int, char *buffer, int *count, int *buffer_inde
 void print_octal(unsigned int, char *buffer, int *count, int *buffer_index);
 void print_hexad_lower(unsigned int, char *buffer, int *count, int *buffer_index);
 void print_hexad_upper(unsigned int, char *buffer, int *count, int *buffer_index);
+void handle_format(const char *ptr, va_list vargs, char *buffer, int *count, int *buffer_index, unsigned int *num);
 
 #endif

@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	{
 		if (*ptr == '%')
 		{
-			handle_format(&ptr, vargs, buffer, &count, &buffer_index, &num);
+			handle_format(ptr, vargs, buffer, &count, &buffer_index, &num);
 		}
 		else
 		{
