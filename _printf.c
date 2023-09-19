@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 		if (*ptr == '%')
 		{
 			handle_format(ptr, vargs, buffer, &count, &buffer_index, &num);
+			ptr++;
 		}
 		else
 		{
