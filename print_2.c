@@ -70,8 +70,10 @@ void print_unsigned_int(unsigned int num, char *buffer, int *count,
 	{
 		if (*buffer_index >= BUFFER_SIZE - 1)
 			print_buffer(buffer, count, buffer_index);
-		buffer[(*buffer_index)++] = num_str[b];
+		if (*buffer_index < BUFFER_SIZE - 1)
+			buffer[(*buffer_index)++] = num_str[b];
 	}
+	buffer[*buffer_index] = '\0';
 }
 
 /**
@@ -95,6 +97,7 @@ void print_octal(unsigned int num, char *buffer, int *count, int *buffer_index)
 			print_buffer(buffer, count, buffer_index);
 		buffer[(*buffer_index)++] = octal_str[i];
 	}
+	buffer[*buffer_index] = '\0';
 }
 
 /**
@@ -119,6 +122,7 @@ void print_hexad_lower(unsigned int num, char *buffer, int *count,
 			print_buffer(buffer, count, buffer_index);
 		buffer[(*buffer_index)++] = hex_str[l];
 	}
+	buffer[*buffer_index] = '\0';
 }
 
 /**
@@ -143,4 +147,5 @@ void print_hexad_upper(unsigned int num, char *buffer, int *count,
 			print_buffer(buffer, count, buffer_index);
 		buffer[(*buffer_index)++] = hex_str[u];
 	}
+	buffer[*buffer_index] = '\0';
 }
